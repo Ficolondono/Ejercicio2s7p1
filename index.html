@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio2</title>
+	<link rel="stylesheet" href="eestilos.css">
+	<script>
+		cincon=[];
+	</script>
+</head>
+<body>
+	<div class="pantalla"></div>
+
+	<form>
+		<div class="completos">
+		<input type="text" id="ingresa" placeholder="Ingrese los digitos" style=" margin-top: 78px; width: 328px; height: 68px" size="48">
+
+		<input type="button" value="Ingresar" onclick="ingreso();" style="width: 128px; height: 30px; color: green; background-color: #87F0B3;" size="32">
+		<br>
+
+		<div id="mmax" style="margin-top: 20px; margin-left: 175px; border-color: black; position: relative ; background-color: white; width: 328px; height: 68px" size="48"></div>
+
+		<input type="button" value="Max" onclick="mostrar();" style="margin-top: 20px; margin-left: 5px;width: 128px; height: 30px; ; color: green; background-color: #87F0B3;" size="32">
+        </div>
+	</form>
+
+	<script> function ingreso()
+		{
+			cincon[cincon.length]=document.getElementById("ingresa").value;
+			console.log(cincon);
+			console.log(cincon.length);
+			document.getElementById("ingresa").value="";
+			if(cincon.length>5)
+			{
+				alert("Ya ha ingresado 5 numeros, no es posible ingresar mas");
+				cincon.pop();
+				console.log(cincon);
+				console.log(cincon.length);
+			}
+		}
+
+		function mostrar()
+		{
+			y=Math.max(...cincon);
+			document.getElementById("mmax").innerHTML=y;
+			console.log(y);
+		}
+</script>
+</body>
+</html>
